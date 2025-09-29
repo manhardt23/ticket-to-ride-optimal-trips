@@ -17,7 +17,7 @@ An intelligent route optimization system that solves the classic board game *Tic
 - **Combinatorial Optimization**: Tests combinations of up to 10 destination tickets to find the highest-scoring set
 - **Shortest Path Algorithm**: Uses NetworkX to compute all shortest paths and selects maximum point routes
 - **Graph Contraction**: Dynamically merges completed paths to prevent resource conflicts
-- **Result Caching**: Caches computation results in JSON for instant subsequent runs (< 0.1s vs 2-5s)
+- **Result Caching**: Caches computation results in JSON for instant subsequent runs (< 0.1s vs ~2 min)
 - **Visual Analytics**: Generates matplotlib visualizations highlighting optimal routes on the game board
 
 ## 🛠️ Technical Implementation
@@ -89,7 +89,7 @@ The optimizer achieves **220 points** by completing **10 destination tickets**:
 | Montreal → Atlanta | 9 |
 | Chicago → New Orleans | 7 |
 
-**Computation Time**: ~2-5 seconds (first run), < 0.1 seconds (cached)
+**Computation Time**: ~2 minutes (first run), < 0.1 seconds (cached)
 
 ## 🏃 Quick Start
 
@@ -126,7 +126,7 @@ Trip Cards Used:
   - Los-Angeles → New-York (21 points)
   ...
 
-Elapsed Time: 2.34 seconds
+Elapsed Time: 120.45 seconds
 ```
 
 ## 💡 Technical Highlights for Employers
@@ -142,11 +142,9 @@ This project demonstrates:
 
 ## 🔮 Future Enhancements
 
-- [ ] Implement dynamic programming for faster combination testing
-- [ ] Add Monte Carlo tree search for real-time gameplay strategy
-- [ ] Support for multiple game variants (Europe, Asia maps)
-- [ ] Machine learning model to predict optimal ticket selection
-- [ ] Web interface for interactive route planning
+- [ ]  Fix visualization to accurately render paths without edge disconnects
+- [ ]  Implement reinforcement learning agent for real-time competitive play
+- [ ]  Web interface for interactive route planning
 
 ## 📝 License
 
@@ -154,10 +152,10 @@ MIT License - feel free to use for educational purposes
 
 ## 👤 Contact
 
-**[Your Name]**  
-📧 your.email@example.com  
-💼 [LinkedIn](https://linkedin.com/in/yourprofile)  
-🐙 [GitHub](https://github.com/yourusername)
+**[Jacob Manhardt]**  
+📧 jemanhardt@comcast.net  
+💼 [LinkedIn](https://www.linkedin.com/in/jacob-manhardt-b9b75025b/)  
+🐙 [GitHub](https://github.com/manhardt23)
 
 ---
 
