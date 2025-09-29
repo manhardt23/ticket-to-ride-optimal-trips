@@ -1,10 +1,10 @@
 # Ticket to Ride Route Optimizer
 
-An intelligent route optimization system that solves the classic board game _Ticket to Ride_ using graph algorithms and combinatorial optimization. The solver maximizes point scores by strategically selecting destination tickets and computing optimal paths while managing limited train resources.
+An intelligent route optimization system that solves the classic board game *Ticket to Ride* using graph algorithms and combinatorial optimization. The solver maximizes point scores by strategically selecting destination tickets and computing optimal paths while managing limited train resources.
 
 ## 🎯 Problem Statement
 
-_Ticket to Ride_ presents a complex optimization challenge:
+*Ticket to Ride* presents a complex optimization challenge:
 
 - **36 North American cities** connected by railway routes
 - **45 train pieces** to allocate across multiple destination tickets
@@ -32,7 +32,14 @@ _Ticket to Ride_ presents a complex optimization challenge:
 ### Architecture
 
 ```
-├── main.py              # Entry point with result caching├── graphCreate.py       # Board graph construction and contraction├── pathing.py          # Route optimization algorithms├── visualize.py        # Network visualization├── city_positions.py   # Geographic coordinate mapping├── cities.txt          # 36 city nodes├── tracks.txt          # Railway connections (weight, train_cost)└── trips.txt           # Destination tickets (start, end, points)
+├── main.py              # Entry point with result caching
+├── graphCreate.py       # Board graph construction and contraction
+├── pathing.py           # Route optimization algorithms
+├── visualize.py         # Network visualization
+├── city_positions.py    # Geographic coordinate mapping
+├── cities.txt           # 36 city nodes
+├── tracks.txt           # Railway connections (weight, train_cost)
+└── trips.txt            # Destination tickets (start, end, points)
 ```
 
 ### Algorithm Design
@@ -40,7 +47,11 @@ _Ticket to Ride_ presents a complex optimization challenge:
 **1. Graph Representation**
 
 ```python
-# Each edge stores: route_points, train_cost, efficiency_ratioG.add_edges_from(    (u, v, {'weight': w, 'trains': t, 'ratio': (w/t)})     for (u, v, (w, t)) in edges)
+# Each edge stores: route_points, train_cost, efficiency_ratio
+G.add_edges_from(
+    (u, v, {'weight': w, 'trains': t, 'ratio': (w/t)}) 
+    for (u, v, (w, t)) in edges
+)
 ```
 
 **2. Path Optimization**
@@ -65,49 +76,18 @@ _Ticket to Ride_ presents a complex optimization challenge:
 
 The optimizer achieves **220 points** by completing **10 destination tickets**:
 
-Route
-
-Points
-
-Seattle → New York
-
-22
-
-Los Angeles → New York
-
-21
-
-Vancouver → Montreal
-
-20
-
-Portland → Nashville
-
-17
-
-San Francisco → Atlanta
-
-17
-
-Los Angeles → Chicago
-
-16
-
-Montreal → New Orleans
-
-13
-
-Dallas → New York
-
-11
-
-Montreal → Atlanta
-
-9
-
-Chicago → New Orleans
-
-7
+| Route | Points |
+|-------|--------|
+| Seattle → New York | 22 |
+| Los Angeles → New York | 21 |
+| Vancouver → Montreal | 20 |
+| Portland → Nashville | 17 |
+| San Francisco → Atlanta | 17 |
+| Los Angeles → Chicago | 16 |
+| Montreal → New Orleans | 13 |
+| Dallas → New York | 11 |
+| Montreal → Atlanta | 9 |
+| Chicago → New Orleans | 7 |
 
 **Computation Time**: ~2-5 seconds (first run), < 0.1 seconds (cached)
 
@@ -133,7 +113,20 @@ python main.py
 ### Example Output
 
 ```
-Total Points Scored: 220Paths Taken:  1. Chicago → Saint-Louis → Little-Rock → New-Orleans  2. Dallas → Chicago → Pittsburgh → New-York  3. Los-Angeles → El-Paso → Dallas  ...Trip Cards Used:  - Seattle → New-York (22 points)  - Los-Angeles → New-York (21 points)  ...Elapsed Time: 2.34 seconds
+Total Points Scored: 220
+
+Paths Taken:
+  1. Chicago → Saint-Louis → Little-Rock → New-Orleans
+  2. Dallas → Chicago → Pittsburgh → New-York
+  3. Los-Angeles → El-Paso → Dallas
+  ...
+
+Trip Cards Used:
+  - Seattle → New-York (22 points)
+  - Los-Angeles → New-York (21 points)
+  ...
+
+Elapsed Time: 2.34 seconds
 ```
 
 ## 💡 Technical Highlights for Employers
@@ -149,11 +142,11 @@ This project demonstrates:
 
 ## 🔮 Future Enhancements
 
-- Implement dynamic programming for faster combination testing
-- Add Monte Carlo tree search for real-time gameplay strategy
-- Support for multiple game variants (Europe, Asia maps)
-- Machine learning model to predict optimal ticket selection
-- Web interface for interactive route planning
+- [ ] Implement dynamic programming for faster combination testing
+- [ ] Add Monte Carlo tree search for real-time gameplay strategy
+- [ ] Support for multiple game variants (Europe, Asia maps)
+- [ ] Machine learning model to predict optimal ticket selection
+- [ ] Web interface for interactive route planning
 
 ## 📝 License
 
@@ -162,10 +155,10 @@ MIT License - feel free to use for educational purposes
 ## 👤 Contact
 
 **[Your Name]**  
-📧 [your.email@example.com](mailto:your.email@example.com)  
+📧 your.email@example.com  
 💼 [LinkedIn](https://linkedin.com/in/yourprofile)  
 🐙 [GitHub](https://github.com/yourusername)
 
 ---
 
-_Built to showcase graph algorithms, optimization techniques, and clean Python architecture_
+*Built to showcase graph algorithms, optimization techniques, and clean Python architecture*
